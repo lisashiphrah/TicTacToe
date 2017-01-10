@@ -26,6 +26,7 @@ body {
 	line-height: 1;
 	font-family: 'Arial';
 	background-position: bottom;
+	background:#a3d9f5;
 }
 ol, ul {
 	list-style: none;
@@ -44,17 +45,32 @@ table {
 }
 
 #ticTacToe {
-	width:350px;
-	height:270px;
-	background:#fff;
-	border-radius: 10px;
+	width:230px;
+	height:230px;
 	position: absolute;
     top: 50%;
     left: 50%;
-    margin-top: -170px;
-    margin-left: -200px;
-    padding: 20px;
+    margin-top: -115px;
+    margin-left: -115px;
 }
+
+#ticTacToe table {
+	width:230px;
+	height:230px;
+}
+
+#ticTacToe tr {
+	border-bottom: 6px solid #2b6c8e;
+}
+
+ #ticTacToe td {
+ 	border-right: 6px solid #2b6c8e;
+ 	width:33%;
+ }
+
+ .noborder {
+ 	border:none!important;
+ }
 
 
 
