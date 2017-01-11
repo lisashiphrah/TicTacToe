@@ -42,6 +42,8 @@ q:before, q:after {
 table {
 	border-collapse: collapse;
 	border-spacing: 0;
+	font-size: 4.5em;
+	font-family: 'ABeeZee', sans-serif;
 }
 
 #ticTacToe {
@@ -58,19 +60,22 @@ table {
 }
 
 #scoreContainer {
-	height:120px;
+	height:15%;
 	background:rgb(248,248,248);
 	border-bottom:1px solid #d8d3d3;
 }
 
 #boardContainer {
 	background:rgb(20,189,177);
-	height:300px;
+	height:75%;
 }
 
 #boardContainer table {
 	width:230px;
 	height:230px;
+	margin-top: 45px;
+    position: absolute;
+    margin-left: 45px;
 }
 
 #boardContainer tr {
@@ -80,10 +85,35 @@ table {
  #boardContainer td {
  	border-right: 6px solid rgb(239,239,239);
  	width:33%;
+ 	text-align: center;
  }
 
  .noborder {
  	border:none!important;
+ }
+
+ .buttonBig {
+ 	width:100%;
+ 	cursor: pointer;
+ 	height:10%;
+ 	display: block;
+ 	border:none;
+ 	color:rgb(20,189,177);
+ 	background:rgb(248,248,248);
+ 	font-weight: bold;
+ 	font-size: 0.8em;
+ }
+
+  .buttonBig:hover {
+  	border: 2px solid rgb(20,189,177);
+  }
+
+  .xColor {
+  	color: #444343;
+  }
+
+ .yColor {
+ 	color:#fff;
  }
 
 

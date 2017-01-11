@@ -1,5 +1,6 @@
 <html> 
 	<head>
+		<link href="https://fonts.googleapis.com/css?family=ABeeZee|Cagliostro|Days+One|Krona+One" rel="stylesheet">
 		<link rel="stylesheet" type="text/css" href="styles.css">
 		<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha256-/SIrNqv8h6QGKDuNoLGA4iret+kyesCkHGzVUUV0shc=" crossorigin="anonymous"></script>	
 		<script src="scripts.js"></script>
@@ -8,27 +9,32 @@
 	<body>
 		<div id="ticTacToe">
 			<div id="scoreContainer">
-				
+				<label id="xScore">0</label>
+				<label>X</label>
+				<label>X</label>
+				<label>Y</label>
+				<label id="yScore">0</label>
 			</div>
 			<div id="boardContainer">
 				<table>
 					<tr>
-						<td></td>
-						<td></td>
-						<td class="noborder"></td>
+						<td id="11">X</td>
+						<td id="12">O</td>
+						<td id="13" class="noborder"></td>
 					</tr>
 					<tr>
-						<td></td>
-						<td></td>
-						<td class="noborder"></td>
+						<td id="21"></td>
+						<td id="22">X</td>
+						<td id="23" class="noborder"></td>
 					</tr>
 					<tr class="noborder">
-						<td></td>
-						<td></td>
-						<td class="noborder"></td>
+						<td id="31"></td>
+						<td id="32"></td>
+						<td id="33" class="noborder">O</td>
 					</tr>
 				</table>
 			</div>
+			<input class="buttonBig" type="button" value="RESTART GAME"/>
 		</div>
 	</body>
 </html>
