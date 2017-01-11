@@ -26,6 +26,7 @@ body {
 	line-height: 1;
 	font-family: 'Arial';
 	background-position: bottom;
+	background: #e2e2e2;
 	
 }
 ol, ul {
@@ -63,6 +64,23 @@ table {
 	height:15%;
 	background:rgb(248,248,248);
 	border-bottom:1px solid #d8d3d3;
+	text-align: center;	
+	font-size: 3em;
+	line-height: 1.4em;
+}
+
+#scoreContainer span {
+	font-family: 'ABeeZee', sans-serif;
+	color: #444343;
+}
+
+#scoreContainer label {
+	color: rgb(20,189,177);
+}
+
+#scoreContainer div {
+	display: inline-block;
+	width:40%;
 }
 
 #boardContainer {
