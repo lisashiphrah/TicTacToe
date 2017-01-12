@@ -1,6 +1,7 @@
 <html> 
 	<head>
 		<link href="https://fonts.googleapis.com/css?family=ABeeZee|Cagliostro|Days+One|Krona+One" rel="stylesheet">
+		<link rel="stylesheet" href="animate.css">
 		<link rel="stylesheet" type="text/css" href="styles.css">
 		<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha256-/SIrNqv8h6QGKDuNoLGA4iret+kyesCkHGzVUUV0shc=" crossorigin="anonymous"></script>	
 		<script src="scripts.js"></script>
@@ -19,24 +20,34 @@
 					<span>Y</span>
 				</div>
 			</div>
+			<div id="initGameContainer">
+				<label>SELECT YOUR SIDE: </label>
+				<div>
+					<span id="sideX" onclick="selectedSide('X')" class="sides animated infinite">X</span>
+					<span id="sideY" onclick="selectedSide('Y)"class="sides animated infinite">Y</span>
+				</div>
+			</div>
 			<div id="boardContainer">
 				<table>
 					<tr>
-						<td id="11">X</td>
-						<td id="12">O</td>
+						<td id="11"></td>
+						<td id="12"></td>
 						<td id="13" class="noborder"></td>
 					</tr>
 					<tr>
 						<td id="21"></td>
-						<td id="22">X</td>
+						<td id="22"></td>
 						<td id="23" class="noborder"></td>
 					</tr>
 					<tr class="noborder">
 						<td id="31"></td>
 						<td id="32"></td>
-						<td id="33" class="noborder">O</td>
+						<td id="33" class="noborder"></td>
 					</tr>
 				</table>
+			</div>
+			<div id="endGameContainer">
+				Game Over
 			</div>
 			<input class="buttonBig" type="button" value="RESTART GAME"/>
 		</div>

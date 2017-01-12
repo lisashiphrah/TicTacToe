@@ -24,7 +24,7 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
 	line-height: 1;
-	font-family: 'Arial';
+	font-family: 'ABeeZee', sans-serif;
 	background-position: bottom;
 	background: #e2e2e2;
 	
@@ -44,7 +44,6 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 	font-size: 4.5em;
-	font-family: 'ABeeZee', sans-serif;
 }
 
 #ticTacToe {
@@ -60,6 +59,29 @@ table {
     box-shadow: 0px 0px 11px 1px #888888
 }
 
+#initGameContainer {
+	text-align: center;	
+	font-size: 1.6em;
+	font-weight: bold;
+	color:#fff;
+}
+
+#initGameContainer label {
+	margin-top: 15%;
+    display: inline-block;
+}
+
+#initGameContainer div {
+	font-size: 3em;
+	margin-top: 10%;
+}
+
+#initGameContainer div span {
+	cursor: pointer;
+	display: inline-block;
+	width: 45%
+}
+
 #scoreContainer {
 	height:15%;
 	background:rgb(248,248,248);
@@ -69,8 +91,7 @@ table {
 	line-height: 1.4em;
 }
 
-#scoreContainer span {
-	font-family: 'ABeeZee', sans-serif;
+span {
 	color: #444343;
 }
 
@@ -83,9 +104,13 @@ table {
 	width:40%;
 }
 
-#boardContainer {
+#boardContainer, #endGameContainer, #initGameContainer {
 	background:rgb(20,189,177);
 	height:75%;
+}
+
+#endGameContainer, #boardContainer {
+	display: none;
 }
 
 #boardContainer table {
