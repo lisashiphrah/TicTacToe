@@ -119,6 +119,7 @@ span {
 	margin-top: 45px;
     position: absolute;
     margin-left: 45px;
+	table-layout: fixed 
 }
 
 #boardContainer tr {
