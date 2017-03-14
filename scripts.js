@@ -42,5 +42,6 @@ function makeMovement(element){
 * Restarts the game.
 */
 function restartGame(){
-
+	$('#boardContainer').hide();
+	$('#initGameContainer').show();
 }
