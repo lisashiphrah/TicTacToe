@@ -55,6 +55,7 @@ function makeMovement(element){
 function restartGame(){
 	$('#boardContainer').hide();
 	$('#initGameContainer').show();
+	cleanBoard();
 }
 
 /**
@@ -105,4 +106,19 @@ function checkWinner(){
 	if(pos13 == pos22 && pos22 == pos31 && pos13 != '') {
 		return true;
 	}
+}
+
+/**
+* Cleans the board for the next game
+*/
+function cleanBoard() {
+	var pos11 = $('#11').text('');
+	var pos12 = $('#12').text('');
+	var pos13 = $('#13').text('');
+	var pos21 = $('#21').text('');
+	var pos22 = $('#22').text('');
+	var pos23 = $('#23').text('');
+	var pos31 = $('#31').text('');
+	var pos32 = $('#32').text('');
+	var pos33 = $('#33').text('');
 }
