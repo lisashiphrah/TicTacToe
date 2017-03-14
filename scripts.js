@@ -10,7 +10,9 @@ $(document).ready(function(){
 
 });
 
-//Function called after user selects a side to play
+/**
+* Function called after user selects a side to play
+*/
 function selectedSide(value){
 	side = value;
 	$('#initGameContainer').hide();
@@ -19,7 +21,9 @@ function selectedSide(value){
 	initGame();
 }
 
-//Function responsible for starting the game
+/**
+* Function responsible for starting the game
+*/
 function initGame() {
 	if(side === 'X') { //X starts playing
 
@@ -31,4 +35,12 @@ function initGame() {
 
 function makeMovement(element){
 	alert($(element));
+}
+
+/**
+* Function called when the button 'Restart Game' is clicked.
+* Restarts the game.
+*/
+function restartGame(){
+
 }
