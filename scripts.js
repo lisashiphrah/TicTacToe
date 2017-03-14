@@ -1,5 +1,8 @@
 var side = '';
+var computerSide = '';
+
 $(document).ready(function(){
+
 	$('.sides').mouseenter(function(){
 		$(this).addClass('bounce');
 	});
@@ -26,11 +29,12 @@ function selectedSide(value){
 * Function responsible for starting the game
 */
 function initGame() {
-	if(side === 'X') { //X starts playing
-
+	if(side != 'X') { //If user selected O, computer starts playing
+		computerSide = 'X';
+		computerMovement();
 	}
 	else {
-
+		computerSide = 'O';
 	}
 }
 
@@ -44,7 +48,88 @@ function makeMovement(element){
 	}
 	if(checkWinner()) {
 		setTimeout(function(){ alert('winner: ' + side); }, 100);
+	}
+	else { //if there is no winner, computer plays
+		setTimeout(function(){ computerMovement(); }, 300);
+	}
+}
 
+/**
+* Computer play
+* Here there is a very basic AI implementation
+*/
+function computerMovement(){
+	if($('#11').text() == side &&
+		$('#22').text() == '' &&
+		$('#21').text() == side &&
+		$('#23').text() == side &&
+		$('#31').text() == side &&
+		$('#33').text() == side) {
+		$('#22').text(computerSide);
+	}
+	else if($('#11').text() == side && $('#13').text() == side && $('#12').text() == ''){
+		$('#12').text(computerSide);
+	}
+	else if($('#31').text() == side && $('#33').text() == side && $('#32').text() == ''){
+		$('#32').text(computerSide);
+	}
+	else if($('#31').text() == side && $('#32').text() == side && $('#33').text() == ''){
+		$('#33').text(computerSide);
+	}
+	else if($('#21').text() == side && $('#22').text() == side && $('#23').text() == ''){
+		$('#23').text(computerSide);
+	}
+	else if($('#12').text() == side && $('#13').text() == side && $('#11').text() == ''){
+		$('#11').text(computerSide);
+	}
+	else {
+		randomPlay();
+	}
+}
+
+/**
+* Gets a random free position and play
+*/
+function randomPlay(){
+	var validPlay = false;
+	while(!validPlay){
+		var random = Math.random() * 10;
+		if(random < 1 && $('#11').text() == ''){
+			$('#11').text(computerSide);
+			validPlay = true;
+		}
+		else if(random < 2 && $('#12').text() == ''){
+			$('#12').text(computerSide);
+			validPlay = true;
+		}
+		else if(random < 3 && $('#13').text() == ''){
+			$('#13').text(computerSide);
+			validPlay = true;
+		}
+		else if(random < 4 && $('#21').text() == ''){
+			$('#21').text(computerSide);
+			validPlay = true;
+		}
+		else if(random < 5 && $('#22').text() == ''){
+			$('#22').text(computerSide);
+			validPlay = true;
+		}
+		else if(random < 6 && $('#23').text() == ''){
+			$('#23').text(computerSide);
+			validPlay = true;
+		}
+		else if(random < 7 && $('#31').text() == ''){
+			$('#31').text(computerSide);
+			validPlay = true;
+		}
+		else if(random < 8 && $('#32').text() == ''){
+			$('#32').text(computerSide);
+			validPlay = true;
+		}
+		else if($('#33').text() == ''){
+			$('#33').text(computerSide);
+			validPlay = true;
+		}
 	}
 }
 
