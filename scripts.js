@@ -88,7 +88,6 @@ function computerMovement(){
 		randomPlay();
 	}
 	setTimeout(function(){ gameIsOver = checkWinner(); }, 300);
-	
 }
 
 /**
@@ -210,6 +209,22 @@ function checkWinner(){
 		}
 		else {
 			setTimeout(function(){ alert('winner: ' + winner); }, 100);
+		}
+		switch(winner){
+			case 'X':
+				var score = parseInt($('#xScore').text())  + 1;
+				$('#xScore').text('' + score);
+				break;
+			case 'O':
+				var score = parseInt($('#oScore').text())  + 1;
+				$('#oScore').text('' + score);
+				break;
+			case 'DRAW':
+				var scoreX = parseInt($('#xScore').text()) + 1;
+				$('#xScore').text('' + scoreX);
+				var scoreO = parseInt($('#oScore').text())  + 1;
+				$('#oScore').text('' + scoreO);
+				break;
 		}
 		return true;
 	}
