@@ -75,5 +75,5 @@ function computerMovement(){
 ```
 And... this is how the game looks like:
 
-<img src="pic1.png" />
+<img src="pic.png" />
 
