@@ -2,6 +2,8 @@
 
 # TicTacToe
 
+### :star2: :star2: Check out the latest live version: https://codepen.io/lisashiphrah/pen/XMavYa
+
 This project is one of the final projects required to receive the FreeCodeCamp Front End Development Certificate
 
 1. Objective: Build a CodePen.io app that is functionally similar to this: https://codepen.io/FreeCodeCamp/full/KzXQgy/
