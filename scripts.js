@@ -59,27 +59,27 @@ function makeMovement(element){
 * Here there is a very basic AI implementation
 */
 function computerMovement(){
-	if($('#11').text() == side &&
-		$('#22').text() == '' &&
-		$('#21').text() == side &&
-		$('#23').text() == side &&
-		$('#31').text() == side &&
-		$('#33').text() == side) {
+	if(	($('#11').text() == side ||
+		$('#21').text() == side ||
+		$('#23').text() == side ||
+		$('#31').text() == side ||
+		$('#33').text() == side)  &&
+		$('#22').text() == '') {
 		$('#22').text(computerSide);
 	}
-	else if($('#11').text() == side && $('#13').text() == side && $('#12').text() == ''){
+	else if(($('#11').text() == side || $('#13').text() == side) && $('#12').text() == ''){
 		$('#12').text(computerSide);
 	}
-	else if($('#31').text() == side && $('#33').text() == side && $('#32').text() == ''){
+	else if(($('#31').text() == side || $('#33').text() == side) && $('#32').text() == ''){
 		$('#32').text(computerSide);
 	}
-	else if($('#31').text() == side && $('#32').text() == side && $('#33').text() == ''){
+	else if(($('#31').text() == side || $('#32').text() == side) && $('#33').text() == ''){
 		$('#33').text(computerSide);
 	}
-	else if($('#21').text() == side && $('#22').text() == side && $('#23').text() == ''){
+	else if(($('#21').text() == side || $('#22').text() == side) && $('#23').text() == ''){
 		$('#23').text(computerSide);
 	}
-	else if($('#12').text() == side && $('#13').text() == side && $('#11').text() == ''){
+	else if(($('#12').text() == side|| $('#13').text() == side) && $('#11').text() == ''){
 		$('#11').text(computerSide);
 	}
 	else {

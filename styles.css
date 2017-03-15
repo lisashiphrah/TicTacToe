@@ -135,6 +135,8 @@ span {
 
 #boardContainer tr {
 	border-bottom: 6px solid rgb(239,239,239); 
+	height: 75px;
+
 }
 
  #boardContainer td {
