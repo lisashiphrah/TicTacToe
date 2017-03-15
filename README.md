@@ -12,7 +12,7 @@ This project is one of the final projects required to receive the FreeCodeCamp F
 
 ## Solution Proposed
 
-The solution is composed mainly by 3 files: page.html, scripts.js, styles.css. The extra css file called animate.css is just adding a few extra animations to the game.
+The solution is composed mainly by 3 files: page.html, scripts.js, styles.css. The extra css file called animate.css is just adding a few extra animations to the game. 
 The main function in the game is the `makeMovement(element)` function, which works in the following steps:
 1. Checks if the game is over -> if it's not, the user can play
 2. Checks if the player selected a valid position (you cannot play in the same position twice)
