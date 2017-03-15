@@ -1,5 +1,7 @@
 var side = '';
 var computerSide = '';
+var winner = '';
+var gameIsOver = false;
 
 $(document).ready(function(){
 
@@ -43,14 +45,14 @@ function initGame() {
 * param {element} element/position clicked
 */
 function makeMovement(element){
-	if($(element).text() == ''){
-		$(element).text(side);
-	}
-	if(checkWinner()) {
-		setTimeout(function(){ alert('winner: ' + side); }, 100);
-	}
-	else { //if there is no winner, computer plays
-		setTimeout(function(){ computerMovement(); }, 300);
+	if(!gameIsOver){
+		if($(element).text() == ''){
+			$(element).text(side);
+		}
+		gameIsOver = checkWinner();
+		if(!gameIsOver) { //if there is no winner, computer plays
+			setTimeout(function(){ computerMovement(); }, 300);
+		}
 	}
 }
 
@@ -85,6 +87,8 @@ function computerMovement(){
 	else {
 		randomPlay();
 	}
+	setTimeout(function(){ gameIsOver = checkWinner(); }, 300);
+	
 }
 
 /**
@@ -138,6 +142,8 @@ function randomPlay(){
 * Restarts the game.
 */
 function restartGame(){
+	winner = '';
+	gameIsOver = false;
 	$('#boardContainer').hide();
 	$('#initGameContainer').show();
 	cleanBoard();
@@ -159,38 +165,55 @@ function checkWinner(){
 
 	//Same line
 	if(pos11 == pos12 && pos12 == pos13 && pos11 != '') {
-		return true;
+		winner = pos11;
 	}
 
-	if(pos21 == pos22 && pos22 == pos23 && pos21 != '') {
-		return true;
+	else if(pos21 == pos22 && pos22 == pos23 && pos21 != '') {
+		winner = pos22;
 	}
 
-	if(pos31 == pos32 && pos32 == pos33 && pos31 != '') {
-		return true;
+	else if(pos31 == pos32 && pos32 == pos33 && pos31 != '') {
+		winner = pos31;
 	}
 
 	//Same column
-	if(pos11 == pos21 && pos21 == pos31 && pos11 != '') {
-		return true;
+	else if(pos11 == pos21 && pos21 == pos31 && pos11 != '') {
+		winner = pos11;
 	}
 
-	if(pos12 == pos22 && pos22 == pos32 && pos12 != '') {
-		return true;
+	else if(pos12 == pos22 && pos22 == pos32 && pos12 != '') {
+		winner = pos22;
 	}
 
-	if(pos13 == pos23 && pos23 == pos33 && pos13 != '') {
-		return true;
+	else if(pos13 == pos23 && pos23 == pos33 && pos13 != '') {
+		winner = pos13;
 	}
 
 	//Diagonal
-	if(pos11 == pos22 && pos22 == pos33 && pos11 != '') {
-		return true;
+	else if(pos11 == pos22 && pos22 == pos33 && pos11 != '') {
+		winner = pos22;
 	}
 
-	if(pos13 == pos22 && pos22 == pos31 && pos13 != '') {
+	else if(pos13 == pos22 && pos22 == pos31 && pos13 != '') {
+		winner = pos22;
+	}
+	else {
+		if(pos11 != '' && pos12 != '' && pos13 != '' && pos21 != '' && pos22 != '' &&
+			pos23 != '' && pos31 != '' && pos32 != '' && pos33 != ''){
+				winner = 'DRAW';
+		}
+	}
+
+	if(winner != ''){
+		if(winner == 'DRAW') {
+			setTimeout(function(){ alert('DRAW'); }, 100);
+		}
+		else {
+			setTimeout(function(){ alert('winner: ' + winner); }, 100);
+		}
 		return true;
 	}
+	return false;
 }
 
 /**
