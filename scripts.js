@@ -31,7 +31,7 @@ function selectedSide(value){
 * Function responsible for starting the game
 */
 function initGame() {
-	if(side != 'X') { //If user selected O, computer starts playing
+	if(side !== 'X') { //If user selected O, computer starts playing
 		computerSide = 'X';
 		computerMovement();
 	}
@@ -46,7 +46,7 @@ function initGame() {
 */
 function makeMovement(element){
 	if(!gameIsOver){
-		if($(element).text() == ''){
+		if($(element).text() === ''){
 			$(element).text(side);
 		}
 		gameIsOver = checkWinner();
@@ -61,27 +61,27 @@ function makeMovement(element){
 * Here there is a very basic AI implementation
 */
 function computerMovement(){
-	if(	($('#11').text() == side ||
-		$('#21').text() == side ||
-		$('#23').text() == side ||
-		$('#31').text() == side ||
-		$('#33').text() == side)  &&
-		$('#22').text() == '') {
+	if(	($('#11').text() === side ||
+		$('#21').text() === side ||
+		$('#23').text() === side ||
+		$('#31').text() === side ||
+		$('#33').text() === side)  &&
+		$('#22').text() === '') {
 		$('#22').text(computerSide);
 	}
-	else if(($('#11').text() == side || $('#13').text() == side) && $('#12').text() == ''){
+	else if(($('#11').text() === side || $('#13').text() === side) && $('#12').text() === ''){
 		$('#12').text(computerSide);
 	}
-	else if(($('#31').text() == side || $('#33').text() == side) && $('#32').text() == ''){
+	else if(($('#31').text() === side || $('#33').text() === side) && $('#32').text() === ''){
 		$('#32').text(computerSide);
 	}
-	else if(($('#31').text() == side || $('#32').text() == side) && $('#33').text() == ''){
+	else if(($('#31').text() === side || $('#32').text() === side) && $('#33').text() === ''){
 		$('#33').text(computerSide);
 	}
-	else if(($('#21').text() == side || $('#22').text() == side) && $('#23').text() == ''){
+	else if(($('#21').text() === side || $('#22').text() === side) && $('#23').text() === ''){
 		$('#23').text(computerSide);
 	}
-	else if(($('#12').text() == side|| $('#13').text() == side) && $('#11').text() == ''){
+	else if(($('#12').text() === side|| $('#13').text() === side) && $('#11').text() === ''){
 		$('#11').text(computerSide);
 	}
 	else {
@@ -97,39 +97,39 @@ function randomPlay(){
 	var validPlay = false;
 	while(!validPlay){
 		var random = Math.random() * 10;
-		if(random < 1 && $('#11').text() == ''){
+		if(random < 1 && $('#11').text() === ''){
 			$('#11').text(computerSide);
 			validPlay = true;
 		}
-		else if(random < 2 && $('#12').text() == ''){
+		else if(random < 2 && $('#12').text() === ''){
 			$('#12').text(computerSide);
 			validPlay = true;
 		}
-		else if(random < 3 && $('#13').text() == ''){
+		else if(random < 3 && $('#13').text() === ''){
 			$('#13').text(computerSide);
 			validPlay = true;
 		}
-		else if(random < 4 && $('#21').text() == ''){
+		else if(random < 4 && $('#21').text() === ''){
 			$('#21').text(computerSide);
 			validPlay = true;
 		}
-		else if(random < 5 && $('#22').text() == ''){
+		else if(random < 5 && $('#22').text() === ''){
 			$('#22').text(computerSide);
 			validPlay = true;
 		}
-		else if(random < 6 && $('#23').text() == ''){
+		else if(random < 6 && $('#23').text() === ''){
 			$('#23').text(computerSide);
 			validPlay = true;
 		}
-		else if(random < 7 && $('#31').text() == ''){
+		else if(random < 7 && $('#31').text() === ''){
 			$('#31').text(computerSide);
 			validPlay = true;
 		}
-		else if(random < 8 && $('#32').text() == ''){
+		else if(random < 8 && $('#32').text() === ''){
 			$('#32').text(computerSide);
 			validPlay = true;
 		}
-		else if($('#33').text() == ''){
+		else if($('#33').text() === ''){
 			$('#33').text(computerSide);
 			validPlay = true;
 		}
@@ -163,42 +163,42 @@ function checkWinner(){
 	var pos33 = $('#33').text();
 
 	//Same line
-	if(pos11 == pos12 && pos12 == pos13 && pos11 != '') {
+	if(pos11 === pos12 && pos12 === pos13 && pos11 !== '') {
 		winner = pos11;
 	}
 
-	else if(pos21 == pos22 && pos22 == pos23 && pos21 != '') {
+	else if(pos21 === pos22 && pos22 === pos23 && pos21 !== '') {
 		winner = pos22;
 	}
 
-	else if(pos31 == pos32 && pos32 == pos33 && pos31 != '') {
+	else if(pos31 === pos32 && pos32 === pos33 && pos31 !== '') {
 		winner = pos31;
 	}
 
 	//Same column
-	else if(pos11 == pos21 && pos21 == pos31 && pos11 != '') {
+	else if(pos11 === pos21 && pos21 === pos31 && pos11 !== '') {
 		winner = pos11;
 	}
 
-	else if(pos12 == pos22 && pos22 == pos32 && pos12 != '') {
+	else if(pos12 === pos22 && pos22 === pos32 && pos12 !== '') {
 		winner = pos22;
 	}
 
-	else if(pos13 == pos23 && pos23 == pos33 && pos13 != '') {
+	else if(pos13 === pos23 && pos23 === pos33 && pos13 !== '') {
 		winner = pos13;
 	}
 
 	//Diagonal
-	else if(pos11 == pos22 && pos22 == pos33 && pos11 != '') {
+	else if(pos11 === pos22 && pos22 === pos33 && pos11 !== '') {
 		winner = pos22;
 	}
 
-	else if(pos13 == pos22 && pos22 == pos31 && pos13 != '') {
+	else if(pos13 === pos22 && pos22 === pos31 && pos13 !== '') {
 		winner = pos22;
 	}
 	else {
-		if(pos11 != '' && pos12 != '' && pos13 != '' && pos21 != '' && pos22 != '' &&
-			pos23 != '' && pos31 != '' && pos32 != '' && pos33 != ''){
+		if(pos11 !== '' && pos12 !== '' && pos13 !== '' && pos21 !== '' && pos22 !== '' &&
+			pos23 !== '' && pos31 !== '' && pos32 !== '' && pos33 !== ''){
 				winner = 'DRAW';
 		}
 	}
