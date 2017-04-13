@@ -1,5 +1,9 @@
 ![FreeCodeCamp Social Banner](https://s3.amazonaws.com/freecodecamp/wide-social-banner.png)
 
+<a href="https://codeclimate.com/github/lisashiphrah/TicTacToe"><img src="https://codeclimate.com/github/lisashiphrah/TicTacToe/badges/gpa.svg" /></a>
+
+<a href="https://codeclimate.com/github/lisashiphrah/TicTacToe"><img src="https://codeclimate.com/github/lisashiphrah/TicTacToe/badges/issue_count.svg" /></a>
+
 # TicTacToe
 
 ### :star2: :star2: Check out the latest live version: https://codepen.io/lisashiphrah/pen/XMavYa
