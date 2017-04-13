@@ -203,8 +203,8 @@ function checkWinner(){
 		}
 	}
 
-	if(winner != ''){
-		if(winner == 'DRAW') {
+	if(winner !== ''){
+		if(winner === 'DRAW') {
 			setTimeout(function(){ alert('DRAW'); }, 100);
 		}
 		else {
