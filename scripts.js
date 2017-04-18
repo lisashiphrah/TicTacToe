@@ -210,20 +210,19 @@ function checkWinner(){
 		else {
 			setTimeout(function(){ alert('winner: ' + winner); }, 100);
 		}
+		var xScoreNewText = parseInt($('#xScore').text(), 10)  + 1;
+		var oScoreNewText = parseInt($('#oScore').text(), 10)  + 1;
+
 		switch(winner){
 			case 'X':
-				var scoreX = parseInt($('#xScore').text(), 10)  + 1;
-				$('#xScore').text('' + scoreX);
+				$('#xScore').text('' + xScoreNewText);
 				break;
 			case 'O':
-				var scoreO = parseInt($('#oScore').text(), 10)  + 1;
-				$('#oScore').text('' + scoreO);
+				$('#oScore').text('' + oScoreNewText);
 				break;
 			case 'DRAW':
-				var scoreXDraw = parseInt($('#xScore').text(), 10) + 1;
-				$('#xScore').text('' + scoreXDraw);
-				var scoreODraw = parseInt($('#oScore').text(), 10)  + 1;
-				$('#oScore').text('' + scoreODraw);
+				$('#xScore').text('' + xScoreNewText);
+				$('#oScore').text('' + oScoreNewText);
 				break;
 		}
 		return true;
