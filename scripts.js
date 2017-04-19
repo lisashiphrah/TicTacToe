@@ -61,27 +61,32 @@ function makeMovement(element){
 * Here there is a very basic AI implementation
 */
 function computerMovement(){
-	if(	($('#11').text() === side ||
-		$('#21').text() === side ||
-		$('#23').text() === side ||
-		$('#31').text() === side ||
-		$('#33').text() === side)  &&
-		$('#22').text() === '') {
+	var _11 = $('#11').text();
+	var _12 = $('#12').text();
+	var _13 = $('#13').text();
+	var _21 = $('#21').text();
+	var _22 = $('#22').text();
+	var _23 = $('#23').text();
+	var _31 = $('#31').text();
+	var _32 = $('#32').text();
+	var _33 = $('#33').text();
+
+	if(	(_11 === side || _21 === side || _23 === side || _31 === side || _33 === side)  && _22 === '') {
 		$('#22').text(computerSide);
 	}
-	else if(($('#11').text() === side || $('#13').text() === side) && $('#12').text() === ''){
+	else if((_11 === side || _13 === side) && _12 === ''){
 		$('#12').text(computerSide);
 	}
-	else if(($('#31').text() === side || $('#33').text() === side) && $('#32').text() === ''){
+	else if((_31 === side || _33 === side) && _32 === ''){
 		$('#32').text(computerSide);
 	}
-	else if(($('#31').text() === side || $('#32').text() === side) && $('#33').text() === ''){
+	else if((_31 === side || _32 === side) && _33 === ''){
 		$('#33').text(computerSide);
 	}
-	else if(($('#21').text() === side || $('#22').text() === side) && $('#23').text() === ''){
+	else if((_21 === side || _22 === side) && _23 === ''){
 		$('#23').text(computerSide);
 	}
-	else if(($('#12').text() === side|| $('#13').text() === side) && $('#11').text() === ''){
+	else if((_12 === side|| _13 === side) && _11 === ''){
 		$('#11').text(computerSide);
 	}
 	else {
