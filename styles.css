@@ -47,7 +47,7 @@ table {
 }
 
 .noborder {
- 	border:none;
+ 	border:none!important;
  }
 
 #ticTacToe {
