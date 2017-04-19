@@ -1,14 +1,3 @@
-/*
-:root {
-  --main-color: #06c;
-  --accent-color: #999;
-}
-
-h1, h2, h3 {
-  color: var(--main-color);
-}
-*/
-
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code, 
 del, dfn, em, img, ins, kbd, q, s, samp,
@@ -57,6 +46,10 @@ table {
 	font-size: 4.5em;
 }
 
+.noborder {
+ 	border:none;
+ }
+
 #ticTacToe {
 	width:340px;
 	height:420px;
@@ -67,7 +60,7 @@ table {
     margin-left: -170px;
     border:1px solid #a7a5a5;
     border-radius: 3px;
-    box-shadow: 0px 0px 11px 1px #888888
+    box-shadow: 0 0 11px 1px #888888
 }
 
 #initGameContainer {
@@ -143,10 +136,6 @@ span {
  	border-right: 6px solid rgb(239,239,239);
  	width:33%;
  	text-align: center;
- }
-
- .noborder {
- 	border:none!important;
  }
 
  .buttonBig {
