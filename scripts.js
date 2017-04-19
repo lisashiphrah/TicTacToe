@@ -205,10 +205,10 @@ function checkWinner(){
 
 	if(winner !== ''){
 		if(winner === 'DRAW') {
-			setTimeout(function(){ alert('DRAW'); }, 100);
+			setTimeout(function(){ alertify.alert('DRAW'); }, 100);
 		}
 		else {
-			setTimeout(function(){ alert('winner: ' + winner); }, 100);
+			setTimeout(function(){ alertify.alert('winner: ' + winner); }, 100);
 		}
 		var xScoreNewText = parseInt($('#xScore').text(), 10)  + 1;
 		var oScoreNewText = parseInt($('#oScore').text(), 10)  + 1;
