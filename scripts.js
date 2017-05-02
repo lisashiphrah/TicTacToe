@@ -3,7 +3,7 @@ var computerSide = '';
 var winner = '';
 var gameIsOver = false;
 
-$(document).ready(function(){
+$(document).ready(function(){  
 
 	$('.sides').mouseenter(function(){
 		$(this).addClass('bounce');
